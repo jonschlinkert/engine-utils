@@ -12,20 +12,18 @@
 var fs = require('fs');
 var path = require('path');
 
-
-var readCache = {};
-
 /**
- * Require cache.
+ * Requires cache.
  */
 
 exports.requires = {};
 
 /**
- * Require cache.
+ * File/string caches
  */
 
 var cacheStore = {};
+var readCache = {};
 
 /**
  * Clear the cache.
@@ -36,7 +34,6 @@ var cacheStore = {};
 exports.clearCache = function () {
   cacheStore = {};
 };
-
 
 /**
  * Conditionally cache `compiled` template based
@@ -62,7 +59,6 @@ exports.cache = function cache(options, compiled) {
   }
   return compiled;
 };
-
 
 /**
  * Read `path` with `options` with
@@ -129,7 +125,6 @@ exports.readPartials = function(filepath, options, callback) {
   }
   next(0);
 };
-
 
 /**
  * fromStringRenderer
